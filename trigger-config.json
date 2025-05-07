@@ -1,0 +1,25 @@
+ {
+"name": "basic-cloudrun-app",
+"version": "1.0.0",
+"main": "app.js",
+"scripts": {
+"start": "node app.js"
+},
+"dependencies": {
+"express": "^4.18.2"
+ }
+ }
+sandeepvaishya326@cloudshell:~/cloudbuild (gcp-v1-training)$ more trigger-config.json
+{
+"name": "deploy-on-commit",
+"description": "Trigger build on push to main",
+"triggerTemplate": {
+"repoName": "your-repo-name",
+"branchName": "main"
+},
+"filename": "cloudbuild.yaml",
+"substitutions": {
+ "_SERVICE_NAME": "basic-app",
+ "_REGION": "us-central1"
+ }
+ }
